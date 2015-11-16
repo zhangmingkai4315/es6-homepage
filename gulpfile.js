@@ -5,6 +5,13 @@ var gulp = require('gulp'),
     browserify=require('gulp-browserify');
 var port=process.env.port||3000;
 
+// gulp.task('concat',function () {
+//   gulp.src('./app/src/js/components/*.js').pipe(concat('main.js'))
+//       .pipe(gulp.dest('./app/src/js/'));
+// });
+
+
+
 // 将所有的组件源文件通过reactify转化为非jsx格式的js代码
 gulp.task('browserify',function () {
   gulp.src('./app/src/js/components/main.js')
@@ -39,7 +46,7 @@ gulp.task('html',function () {
 gulp.task("watch",function () {
   gulp.watch('app/dist/js/*.js',['js']);
   gulp.watch('app/index.html',['html']);
-  gulp.watch("app/src/js/**/*.js",['browserify']);
+  gulp.watch("app/src/js/components/*.js",['browserify']);
 });
 
 gulp.task('default',['browserify']);

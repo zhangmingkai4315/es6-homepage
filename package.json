@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/zhangmingkai4315/es6-homepage",
   "dependencies": {
-    "react": "^0.14.2"
+    "lodash": "^3.10.1",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
