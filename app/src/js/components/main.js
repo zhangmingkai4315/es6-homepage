@@ -1,25 +1,25 @@
 /** @jsx React.DOM */
 
 
-var React = require('react');
-var ES6=require('./ES6');
-var ReactDOM= require('react-dom');
-var MenuData=
-[{
-  key:1,
-  title:"常量",
-  href:'#constants'
-},{
-  key:2,
-  title:"作用域",
-  href:'#Scoping'
-},{
-  key:3,
-  title:"扩展的参数处理",
-  href:'#ExtendArguments'
-},{
-  key:4,
-  title:"箭头函数",
-  href:'#ArrayFunction'
-}];
-ReactDOM.render(<ES6 url="http://localhost:4000/es6/api" MenuData={MenuData}/>,document.getElementById('es6-components'));
+var React = require('react'),
+    ReactDOM= require('react-dom'),
+    ReactRouter=require('react-router'),
+    Router=ReactRouter.Router,
+    Route=ReactRouter.Route,
+    IndexRoute=ReactRouter.IndexRoute,
+    App=require('./App'),
+    ES6=require('./ES6'),
+    Edit=require('./Edit'),
+    New=require('./New'),
+    About=require('./About');
+
+ReactDOM.render((
+  <Router>
+    <Route path="/" component={App}>
+      <IndexRoute component={ES6} />
+      <Route  path="edit/:name" component={Edit}/>
+      <Route  path="new" component={New}/>
+      <Route  path="about" component={About}/>
+    </Route>
+  </Router>
+),document.getElementById('es6-components'));

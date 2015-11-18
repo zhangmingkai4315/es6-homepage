@@ -10,13 +10,7 @@ var InfoList = require('./InfoList.js'),
     Menu = require('./Menu.js'),
     SearchBar = require('./SearchBar.js');
 
-var codeString="```
-var a=10;
-var b=10;
-var f=function(){
-	console.log();
-};
-```";
+var codeString="```\n\rvar a=10;\n\rvar b=10;\n\rvar f=function(){\n\rconsole.log();\n\r};```";
 var ES6 = React.createClass({
   // 设置缺省的菜单
 
@@ -67,12 +61,34 @@ var ES6 = React.createClass({
                 Remark:"无"
               }
       ];
+    var MenuData=
+      [{
+        key:1,
+        title:"常量",
+        href:'#constants'
+      },{
+        key:2,
+        title:"作用域",
+        href:'#Scoping'
+      },{
+        key:3,
+        title:"扩展的参数处理",
+        href:'#ExtendArguments'
+      },{
+        key:4,
+        title:"箭头函数",
+        href:'#ArrayFunction'
+      }];
     return{
       ES6Data:{},
-      fakeData:fakeData
+      fakeData:fakeData,
+      MenuData:MenuData
     }
   },
   // 加载完成后确认页面的显示逻辑，并初始化第一次的请求获得所有的数据
+  componentWillMount:function () {
+    // ajax初始化请求
+  },
   componentDidMount:function () {
     // debugger;
     $("#main").show();
@@ -130,7 +146,7 @@ var ES6 = React.createClass({
     });
     return (
       <div id="layout">
-        <Menu MenuData={this.props.MenuData} changeView={this.handleChangeView}/>
+        <Menu MenuData={this.state.MenuData} changeView={this.handleChangeView}/>
         <SearchBar/>
         {retList}
       </div>
