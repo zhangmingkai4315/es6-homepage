@@ -3,10 +3,20 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var _=require('lodash');
+var markdown=require('markdown').markdown;
+
 var InfoList = require('./InfoList.js'),
     InfoItem = require('./InfoItem.js'),
     Menu = require('./Menu.js'),
     SearchBar = require('./SearchBar.js');
+
+var codeString="```
+var a=10;
+var b=10;
+var f=function(){
+	console.log();
+};
+```";
 var ES6 = React.createClass({
   // 设置缺省的菜单
 
@@ -29,7 +39,7 @@ var ES6 = React.createClass({
               Title:'常量',
               SubTitle:"块级作用域变量",
               Usage:"定义一个变量，该变量只在所在的代码块有效，以下的代码中如果使用var 定义的话，则所有返还的都将是相同的值。通过使用块级作用域定义变量 ，减少了代码的编写量和出错的可能性，使得代码逻辑性更强。",
-              CodeEs6:"const PI=3.14; console.log(PI);",
+              CodeEs6:markdown.toHTML(codeString),
               CodeEs5:"const PI=3.14; console.log(PI);",
               Remark:"无"
             },{id:2,
