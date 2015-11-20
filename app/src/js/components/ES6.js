@@ -10,13 +10,7 @@ var InfoList = require('./InfoList.js'),
     Menu = require('./Menu.js'),
     SearchBar = require('./SearchBar.js');
 
-var codeString="```
-var a=10;
-var b=10;
-var f=function(){
-	console.log();
-};
-```";
+var codeString=;
 var ES6 = React.createClass({
   // 设置缺省的菜单
 

@@ -20,7 +20,8 @@ var Menu = React.createClass({
     }
   },
   backHomePage:function () {
-    $("html,body").animate({scrollTop:0},800); 
+    //返回头部的代码
+    $("html,body").animate({scrollTop:0},800);
     this.onHandleMenuClick();
   },
   render: function() {
