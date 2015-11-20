@@ -11,6 +11,7 @@ var InfoList = require('./InfoList.js'),
     SearchBar = require('./SearchBar.js');
 
 var codeString="```\n\rvar a=10;\n\rvar b=10;\n\rvar f=function(){\n\rconsole.log();\n\r};```";
+
 var ES6 = React.createClass({
   // 设置缺省的菜单
 
